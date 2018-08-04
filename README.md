@@ -1,5 +1,5 @@
 # ChartHelper
-MPAndroidChart
+## MPAndroidChart辅助类，减少初始化属性和设置数据等操作。
 
 ## 1. 饼状图
 
@@ -38,6 +38,51 @@ new PieChartHelper.Builder()
                 .setLegendEnable(false)
                 .build();
 ```
+
+> 数据bean只需要实现IPieData接口
+
+```
+
+public class TestPieData implements IPieData {
+    private String name;
+    private double valueData;
+
+    public TestPieData(double valueData, String name) {
+        this.name = name;
+        this.valueData = valueData;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * 值
+     */
+    @Override
+    public float getValue() {
+        return (float) valueData;
+    }
+
+    /**
+     * 对应名字
+     */
+    @Override
+    public String getLabelName() {
+        return name;
+    }
+
+    public void setValue(double value) {
+        this.valueData = value;
+    }
+}
+
+```
+
 
 
 ![示例图1](https://github.com/chenyy0708/ChartHelper/blob/master/img/%E7%A4%BA%E4%BE%8B%E5%9B%BE.png)
