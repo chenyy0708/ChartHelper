@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.cyy.charthelper.bean.TestBarData;
 import com.cyy.charthelper.bean.TestLineData;
 import com.cyy.charthelper.bean.TestPieData;
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -138,7 +139,36 @@ public class MainActivity extends AppCompatActivity {
         entries.add(new TestPieData(15, "OF330"));
         entries.add(new TestPieData(10, "OF890"));
         entries.add(new TestPieData(5, "RTP"));
-        PieChartHelper.setData(this, entries, pieChart, "");
+
+        new PieChartHelper.Builder()
+                // 上下文
+                .setContext(this)
+                // 饼图
+                .setPieChart(pieChart)
+                // 绑定数据
+                .setPieData(entries)
+                // Label颜色
+                .setLableTextColor(Color.WHITE)
+                .setLableTextSize(14)
+                // 饼图内标签文字
+                .setDrawEntryLabels(true)
+                // 动画时间
+                .setDurationMillis(2000)
+                // 动画类型
+                .setEasing(Easing.EasingOption.EaseInOutQuad)
+                // 旋转角度
+                .setRawRotationAngle(90)
+                // 中心图表孔旁边的透明圆的半径
+                .setTransparentCircleRadiusPercent(10f)
+                // 饼图Item被选中时变化的距离
+                .setSelectionShift(10f)
+                // 饼图区块之间的距离
+                .setSliceSpace(5f)
+                // 中心空白圆心大小
+                .setHoleRadiusPercent(40f)
+                // 是否开启标签
+                .setLegendEnable(false)
+                .build();
     }
 
 
