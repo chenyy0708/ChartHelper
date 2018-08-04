@@ -116,8 +116,6 @@ public class MainActivity extends AppCompatActivity {
                 .setBarChart(bar_chart)
                 // 多柱状图
                 .setBarSetData(data)
-                // 单柱状图
-//                .setBarData(entries)
                 // 多柱状图 标签名集合
                 .setLabels(names)
                 // 一页X轴显示个数
@@ -140,13 +138,9 @@ public class MainActivity extends AppCompatActivity {
                 .setPinchZoom(true)
                 // 多柱状图 每组柱之间的宽度,只在多柱状图生效
                 .setGroupSpace(0.4f)
-                // 单柱状图 每个柱的宽度，只在单柱状图生效
-                .setBarWidth(0.3f)
                 // x,y轴动画时间和类型
                 .setDurationMillis(2000)
                 .setEasing(Easing.EasingOption.Linear)
-                // 单柱状图颜色
-                .setBarColor(Color.parseColor("#0000FF"))
                 // 多柱状图颜色
                 .setBarColors(chartColors)
                 // X轴是否显示自定义数据，在IBarData接口中定义
@@ -184,8 +178,6 @@ public class MainActivity extends AppCompatActivity {
                 .setDescriptionEnable(false)
                 // 按比例放缩柱状图
                 .setPinchZoom(true)
-                // 多柱状图 每组柱之间的宽度,只在多柱状图生效
-                .setGroupSpace(0.12f)
                 // 单柱状图 每个柱的宽度，只在单柱状图生效
                 .setBarWidth(0.6f)
                 // x,y轴动画时间和类型
