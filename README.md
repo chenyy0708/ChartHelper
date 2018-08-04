@@ -1,6 +1,11 @@
 # ChartHelper
 ## MPAndroidChart辅助类，减少初始化属性和设置数据等操作。
 
+[![](https://jitpack.io/v/chenyy0708/ChartHelper.svg)](https://jitpack.io/#chenyy0708/ChartHelper)
+
+## 导入地址
+`implementation 'com.github.chenyy0708:DMvp:lastVersion'`
+
 
 ![示例图1](https://github.com/chenyy0708/ChartHelper/blob/master/img/%E7%A4%BA%E4%BE%8B%E5%9B%BE.png)
 
