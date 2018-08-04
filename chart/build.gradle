@@ -4,18 +4,16 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.github.chenyy0708'
 
-def config = rootProject.ext.android // 配置
-
 android {
-    compileSdkVersion config.compileSdkVersion
+    compileSdkVersion 27
 
 
 
     defaultConfig {
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
-        versionCode config.versionCode
-        versionName config.versionName
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -35,5 +33,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    api "com.github.PhilJay:MPAndroidChart:v$MPAndroidChart"
+    api "com.github.PhilJay:MPAndroidChart:v3.0.3"
 }
