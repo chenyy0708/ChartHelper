@@ -139,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
         entries.add(new TestPieData(15, "OF330"));
         entries.add(new TestPieData(10, "OF890"));
         entries.add(new TestPieData(5, "RTP"));
-
         new PieChartHelper.Builder()
                 // 上下文
                 .setContext(this)

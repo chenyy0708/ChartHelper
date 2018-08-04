@@ -132,22 +132,17 @@ public class PieChartHelper {
      * 初始化饼状图
      */
     private void initPieChart() {
-        //设置为TRUE的话，图标中的数据自动变为percent
         pieChart.setUsePercentValues(percentEnable);
         pieChart.getDescription().setEnabled(mDescriptionEnable);
         pieChart.setRotationAngle(mRawRotationAngle);
         pieChart.setRotationEnabled(mRotateEnabled);
         pieChart.setHighlightPerTapEnabled(mHighLightPerTapEnabled);
-        // 中心空白圆心大小
         pieChart.setHoleRadius(mHoleRadiusPercent);
         pieChart.setDrawEntryLabels(mDrawEntryLabels);
-        // 中心图表孔旁边的透明圆的半径
         pieChart.setTransparentCircleRadius(mTransparentCircleRadiusPercent);
         pieChart.animateY(durationMillis, easing);
         Legend mLegend = pieChart.getLegend();
-        //设置禁用比例块
         mLegend.setEnabled(mLegendEnable);
-        // 初始化图表数据
         setData();
     }
 
@@ -156,27 +151,22 @@ public class PieChartHelper {
         for (IPieData entry : pieData) {
             pieEntries.add(new PieEntry(entry.getValue(), entry.getLabelName()));
         }
-        //饼图数据集
         PieDataSet dataSet = new PieDataSet(pieEntries, mTitle);
-        // 百分比
+        // 格式化成百分比
         dataSet.setValueFormatter(new PercentFormatter());
         dataSet.setValueTextColor(lableTextColor);
         dataSet.setValueTextSize(lableTextSize);
-        // 不显示百分比
+        // 是否显示百分比文字
         if (!percentEnable) {
             dataSet.setValueTextColor(Color.parseColor("#00000000"));
         }
-        //饼图区块之间的距离
         dataSet.setSliceSpace(mSliceSpace);
-        //饼图Item被选中时变化的距离
         dataSet.setSelectionShift(selectionShift);
         dataSet.setColors(mPieColors);
-        //数据填充
         PieData piedata = new PieData(dataSet);
         pieChart.setData(piedata);
         pieChart.invalidate();
     }
-
 
     public static class Builder {
 
