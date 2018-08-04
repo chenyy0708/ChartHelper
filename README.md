@@ -6,7 +6,7 @@
 ## 导入地址
 
 ```
-implementation 'com.github.chenyy0708:DMvp:lastVersion'
+implementation 'com.github.chenyy0708:ChartHelper:v1.0.3'
 ```
 
 ## 效果图
