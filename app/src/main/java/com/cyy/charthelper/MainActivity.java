@@ -12,7 +12,7 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.horen.chart.barchart.BarChartHelper;
-import com.horen.chart.barchart.IBarChartData;
+import com.horen.chart.barchart.IBarData;
 import com.horen.chart.linechart.ILineChartData;
 import com.horen.chart.linechart.LineChartHelper;
 import com.horen.chart.piechart.IPieData;
@@ -86,16 +86,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initMulitleBarChart() {
-//线的名字集合
+        //线的名字集合
         List<String> names = new ArrayList<>();
         names.add("入库");
         names.add("出库");
         names.add("在库");
         // 多条柱状图数据集合
-        List<List<IBarChartData>> data = new ArrayList<>();
+        List<List<IBarData>> data = new ArrayList<>();
         for (int i = 0; i < names.size(); i++) {
             // 单个柱状图数据
-            ArrayList<IBarChartData> entries = new ArrayList<>();
+            ArrayList<IBarData> entries = new ArrayList<>();
             entries.add(new TestBarData((Math.random() * 200), "IF1040"));
             entries.add(new TestBarData((Math.random() * 200), "IF1041"));
             entries.add(new TestBarData((Math.random() * 200), "IF330"));
@@ -104,30 +104,98 @@ public class MainActivity extends AppCompatActivity {
             entries.add(new TestBarData((Math.random() * 200), "IF110"));
             data.add(entries);
         }
-
-        BarChartHelper barChartHelper = new BarChartHelper(bar_chart);
         //颜色填充
         String[] colors = getResources().getStringArray(com.horen.chart.R.array.chart_colors);
         List<Integer> chartColors = new ArrayList<>();
         for (String color : colors) {
             chartColors.add(Color.parseColor(color));
         }
-        //创建多条折线的图表
-        barChartHelper.showBarChart(data, names, chartColors, 3);
+        new BarChartHelper.Builder()
+                .setContext(this)
+                // 柱状图
+                .setBarChart(bar_chart)
+                // 多柱状图
+                .setBarSetData(data)
+                // 单柱状图
+//                .setBarData(entries)
+                // 多柱状图 标签名集合
+                .setLabels(names)
+                // 一页X轴显示个数
+                .setDisplayCount(3)
+                // 标签显示隐藏
+                .setLegendEnable(false)
+                // 标签文字大小
+                .setLegendTextSize(20)
+                // 是否显示右边Y轴
+                .setyAxisRightEnable(false)
+                // X,Y轴是否绘制网格线
+                .setDrawGridLines(false)
+                // 缩放
+                .setScaleEnabled(true)
+                // 是否可以通过双击屏幕放大图表
+                .setDoubleTapToZoomEnabled(true)
+                // 柱状图描述 图表右下角
+                .setDescriptionEnable(false)
+                // 按比例放缩柱状图
+                .setPinchZoom(true)
+                // 多柱状图 每组柱之间的宽度,只在多柱状图生效
+                .setGroupSpace(0.4f)
+                // 单柱状图 每个柱的宽度，只在单柱状图生效
+                .setBarWidth(0.3f)
+                // x,y轴动画时间和类型
+                .setDurationMillis(2000)
+                .setEasing(Easing.EasingOption.Linear)
+                // 单柱状图颜色
+                .setBarColor(Color.parseColor("#0000FF"))
+                // 多柱状图颜色
+                .setBarColors(chartColors)
+                // X轴是否显示自定义数据，在IBarData接口中定义
+                .setXValueEnable(true)
+                .build();
     }
 
     private void initSingleBarChart() {
         //模拟数据
-        ArrayList<IBarChartData> entries = new ArrayList<>();
+        ArrayList<IBarData> entries = new ArrayList<>();
         entries.add(new TestBarData((Math.random() * 80), "液袋"));
         entries.add(new TestBarData((Math.random() * 80), "拉阀"));
         entries.add(new TestBarData((Math.random() * 80), "喉箍"));
         entries.add(new TestBarData((Math.random() * 80), "阀门"));
-        BarChartHelper barChartHelper = new BarChartHelper(single_bar_chart);
-        //颜色填充
-        String[] colors = this.getResources().getStringArray(com.horen.chart.R.array.chart_colors);
         //创建多条折线的图表
-        barChartHelper.showBarChart(entries, Color.parseColor(colors[0]), 4);
+        new BarChartHelper.Builder()
+                .setContext(this)
+                .setBarChart(single_bar_chart)
+                .setBarData(entries)
+                // 一页X轴显示个数
+                .setDisplayCount(4)
+                // 标签显示隐藏
+                .setLegendEnable(false)
+                // 标签文字大小
+                .setLegendTextSize(20)
+                // 是否显示右边Y轴
+                .setyAxisRightEnable(false)
+                // X,Y轴是否绘制网格线
+                .setDrawGridLines(false)
+                // 缩放
+                .setScaleEnabled(true)
+                // 是否可以通过双击屏幕放大图表
+                .setDoubleTapToZoomEnabled(true)
+                // 柱状图描述 图表右下角
+                .setDescriptionEnable(false)
+                // 按比例放缩柱状图
+                .setPinchZoom(true)
+                // 多柱状图 每组柱之间的宽度,只在多柱状图生效
+                .setGroupSpace(0.12f)
+                // 单柱状图 每个柱的宽度，只在单柱状图生效
+                .setBarWidth(0.6f)
+                // x,y轴动画时间和类型
+                .setDurationMillis(2000)
+                .setEasing(Easing.EasingOption.Linear)
+                // 单柱状图颜色
+                .setBarColor(Color.parseColor("#00FF00"))
+                // X轴是否显示自定义数据，在IBarData接口中定义
+                .setXValueEnable(true)
+                .build();
     }
 
     private void initPieChart() {

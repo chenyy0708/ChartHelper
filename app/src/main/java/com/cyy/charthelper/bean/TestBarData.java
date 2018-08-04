@@ -1,6 +1,6 @@
 package com.cyy.charthelper.bean;
 
-import com.horen.chart.barchart.IBarChartData;
+import com.horen.chart.barchart.IBarData;
 
 /**
  * @author :ChenYangYi
@@ -8,7 +8,7 @@ import com.horen.chart.barchart.IBarChartData;
  * @description :
  * @github :https://github.com/chenyy0708
  */
-public class TestBarData implements IBarChartData {
+public class TestBarData implements IBarData {
     private String name;
     private double valueData;
 

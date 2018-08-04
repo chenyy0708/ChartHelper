@@ -25,7 +25,6 @@ public class TestPieData implements IPieData {
         this.name = name;
     }
 
-
     /**
      * 值
      */
