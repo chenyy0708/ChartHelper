@@ -4,7 +4,10 @@
 [![](https://jitpack.io/v/chenyy0708/ChartHelper.svg)](https://jitpack.io/#chenyy0708/ChartHelper)
 
 ## 导入地址
-`implementation 'com.github.chenyy0708:DMvp:lastVersion'`
+
+```
+implementation 'com.github.chenyy0708:DMvp:lastVersion'
+```
 
 ## 效果图
 
