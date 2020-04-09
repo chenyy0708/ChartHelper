@@ -5,7 +5,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.chenyy0708'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 26
 
 
 
@@ -36,5 +36,5 @@ ext {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api "com.github.PhilJay:MPAndroidChart:v3.0.3"
+    api "com.github.PhilJay:MPAndroidChart:v3.1.0"
 }
