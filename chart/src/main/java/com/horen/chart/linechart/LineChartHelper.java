@@ -122,8 +122,8 @@ public class LineChartHelper {
         }
         //将图表动画显示之前进行缩放
         lineChart.getViewPortHandler().refresh(m, lineChart, false);
-        lineChart.animateY(1500, Easing.EasingOption.Linear);
-        lineChart.animateX(1000, Easing.EasingOption.Linear);
+        lineChart.animateY(1500, Easing.Linear);
+        lineChart.animateX(1000, Easing.Linear);
     }
 
 
@@ -168,7 +168,7 @@ public class LineChartHelper {
         }
         //将图表动画显示之前进行缩放
         lineChart.getViewPortHandler().refresh(m, lineChart, false);
-        lineChart.animateY(1500, Easing.EasingOption.Linear);
-        lineChart.animateX(1000, Easing.EasingOption.Linear);
+        lineChart.animateY(1500, Easing.Linear);
+        lineChart.animateX(1000, Easing.Linear);
     }
 }

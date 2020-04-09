@@ -73,7 +73,7 @@ public class PieChartHelper {
     /**
      * 动画类型
      */
-    private Easing.EasingOption easing;
+    private Easing.EasingFunction easing;
     /**
      * Label文字颜色
      */
@@ -223,7 +223,7 @@ public class PieChartHelper {
         /**
          * 动画类型
          */
-        private Easing.EasingOption easing = Easing.EasingOption.EaseInOutQuad;
+        private Easing.EasingFunction easing = Easing.EaseInOutQuad;
         /**
          * Label文字颜色
          */
@@ -313,7 +313,7 @@ public class PieChartHelper {
             return this;
         }
 
-        public Builder setEasing(Easing.EasingOption easing) {
+        public Builder setEasing(Easing.EasingFunction easing) {
             this.easing = easing;
             return this;
         }

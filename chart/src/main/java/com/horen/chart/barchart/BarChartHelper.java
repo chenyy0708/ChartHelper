@@ -109,7 +109,7 @@ public class BarChartHelper {
     /**
      * 动画类型
      */
-    private Easing.EasingOption mEasing;
+    private Easing.EasingFunction mEasing;
     /**
      * 颜色集合
      */
@@ -383,7 +383,7 @@ public class BarChartHelper {
         /**
          * 动画类型
          */
-        private Easing.EasingOption mEasing = Easing.EasingOption.Linear;
+        private Easing.EasingFunction mEasing = Easing.Linear;
         /**
          * 颜色集合
          */
@@ -500,7 +500,7 @@ public class BarChartHelper {
             return this;
         }
 
-        public Builder setEasing(Easing.EasingOption mEasing) {
+        public Builder setEasing(Easing.EasingFunction mEasing) {
             this.mEasing = mEasing;
             return this;
         }

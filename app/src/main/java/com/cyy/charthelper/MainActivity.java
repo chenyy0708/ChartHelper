@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 .setGroupSpace(0.4f)
                 // x,y轴动画时间和类型
                 .setDurationMillis(2000)
-                .setEasing(Easing.EasingOption.Linear)
+                .setEasing(Easing.Linear)
                 // 多柱状图颜色
                 .setBarColors(chartColors)
                 // X轴是否显示自定义数据，在IBarData接口中定义
@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
                 .setBarWidth(0.6f)
                 // x,y轴动画时间和类型
                 .setDurationMillis(2000)
-                .setEasing(Easing.EasingOption.Linear)
+                .setEasing(Easing.Linear)
                 // 单柱状图颜色
                 .setBarColor(Color.parseColor("#00FF00"))
                 // X轴是否显示自定义数据，在IBarData接口中定义
@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
                 // 动画时间
                 .setDurationMillis(2000)
                 // 动画类型
-                .setEasing(Easing.EasingOption.EaseInOutQuad)
+                .setEasing(Easing.EaseInOutQuad)
                 // 旋转角度
                 .setRawRotationAngle(90)
                 // 中心图表孔旁边的透明圆的半径
